@@ -71,10 +71,10 @@ const Header = () => {
         </div>
         {/* Sign-up and Login Buttons */}
         <div className="space-x-4">
-          <a href="#signup" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full">
+          <a href="signup" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full">
             Sign Up
           </a>
-          <a href="#login" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full">
+          <a href="login" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full">
             Login
           </a>
         </div>
@@ -107,7 +107,7 @@ const FeaturedContent = () => {
 
   return (
     <section id='featured' className="container mx-auto pt-20 mt-6"> {/* Add top padding here */}
-      <h2 className="text-2xl font-bold mb-4">Featured Content</h2>
+      <h2 className="text-2xl font-bold mb-4">Featured Contents</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {/* Map through the featuredItems array to display each item */}
         {featuredItems.map(item => (
@@ -200,7 +200,7 @@ const Reviews = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Map through the reviews array to display each review */}
         {reviews.map(review => (
-          <div key={review.id} className="bg-white rounded-lg shadow-md p-4">
+          <div key={review.id} className="bg-white rounded-lg shadow-sm p-4">
             <div className="flex items-center mb-2">
               <div className="text-xl font-semibold mr-2">{'\u2605'.repeat(review.rating)}</div>
               <div>{review.name}</div>
