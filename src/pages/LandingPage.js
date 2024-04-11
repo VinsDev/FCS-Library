@@ -67,24 +67,23 @@ const Header = () => {
 };
 
 const FeaturedContent = () => {
-  // Sample array of featured content (replace with actual data)
   const featuredItems = [
     {
       id: 1,
       title: 'Featured Book 1',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description: 'Content of book 1 will show here',
       imageUrl: 'https://via.placeholder.com/150',
     },
     {
       id: 2,
       title: 'Featured Book 2',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description: 'Content of book 2 will show here',
       imageUrl: 'https://via.placeholder.com/150',
     },
     {
       id: 3,
       title: 'Featured Book 3',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description: 'Content of book 3 will show here',
       imageUrl: 'https://via.placeholder.com/150',
     },
   ];
