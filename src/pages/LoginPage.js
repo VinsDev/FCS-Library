@@ -22,7 +22,7 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white shadow-lg rounded-lg w-96 p-8">
-        <h2 className="text-3xl font-bold mb-8 text-center">Library App Login</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">FCS Library Login</h2>
         <form onSubmit={handleLogin}>
           <div className="mb-4">
             <TextField
