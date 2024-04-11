@@ -1,6 +1,6 @@
 // LandingPage.js
 
-import React from 'react';
+import {React, useState} from 'react';
 import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
@@ -19,27 +19,43 @@ const LandingPage = () => {
 export default LandingPage;
 
 const Header = () => {
+  const [activeItem, setActiveItem] = useState('#featured');
+
+  const handleItemClick = (itemId) => {
+    setActiveItem(itemId);
+    const yOffset = -100; // Adjust the padding as needed
+    const element = document.getElementById(itemId.slice(1));
+    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+
+    // Update URL without page reload
+    window.history.pushState(null, null, itemId);
+  };
+
   return (
     <header className="bg-white shadow-md w-full fixed top-0 z-10">
       <div className="container mx-auto flex justify-between items-center py-4">
         {/* Logo */}
-        <Link to="/" className="text-xl font-bold text-blue-600">
+        <a href="#home" className="text-xl font-bold text-blue-600">
           FCS Library
-        </Link>
+        </a>
         {/* Navigation Menu */}
         <nav className="space-x-4 hidden md:block">
-          <Link to="/" className="text-gray-600 hover:text-gray-800">
-            Home
-          </Link>
-          <Link to="/catalog" className="text-gray-600 hover:text-gray-800">
-            Catalog
-          </Link>
-          <Link to="/services" className="text-gray-600 hover:text-gray-800">
+          <span className={`text-gray-600 hover:text-gray-800 ${activeItem === '#featured' ? 'text-blue-600' : ''} cursor-pointer`} onClick={() => handleItemClick('#featured')}>
+            Featured
+          </span>
+          <span className={`text-gray-600 hover:text-gray-800 ${activeItem === '#categories' ? 'text-blue-600' : ''} cursor-pointer`} onClick={() => handleItemClick('#categories')}>
+            Categories
+          </span>
+          <span className={`text-gray-600 hover:text-gray-800 ${activeItem === '#services' ? 'text-blue-600' : ''} cursor-pointer`} onClick={() => handleItemClick('#services')}>
             Services
-          </Link>
-          <Link to="/about" className="text-gray-600 hover:text-gray-800">
+          </span>
+          <span className={`text-gray-600 hover:text-gray-800 ${activeItem === '#reviews' ? 'text-blue-600' : ''} cursor-pointer`} onClick={() => handleItemClick('#reviews')}>
+            Reviews
+          </span>
+          <span className={`text-gray-600 hover:text-gray-800 ${activeItem === '#about' ? 'text-blue-600' : ''} cursor-pointer`} onClick={() => handleItemClick('#about')}>
             About Us
-          </Link>
+          </span>
         </nav>
         {/* Search Bar */}
         <div className="flex items-center">
@@ -54,12 +70,12 @@ const Header = () => {
         </div>
         {/* Sign-up and Login Buttons */}
         <div className="space-x-4">
-          <Link to="/signup" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full">
+          <a href="#signup" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full">
             Sign Up
-          </Link>
-          <Link to="/login" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full">
+          </a>
+          <a href="#login" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full">
             Login
-          </Link>
+          </a>
         </div>
       </div>
     </header>
@@ -89,7 +105,7 @@ const FeaturedContent = () => {
   ];
 
   return (
-    <section className="container mx-auto pt-20 mt-6"> {/* Add top padding here */}
+    <section id='featured' className="container mx-auto pt-20 mt-6"> {/* Add top padding here */}
       <h2 className="text-2xl font-bold mb-4">Featured Content</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {/* Map through the featuredItems array to display each item */}
@@ -120,7 +136,7 @@ const Categories = () => {
   ];
 
   return (
-    <section className="container mx-auto py-8">
+    <section id='categories' className="container mx-auto py-8">
       <h2 className="text-2xl font-bold mb-4">Categories</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {/* Map through the categories array to display each category */}
@@ -147,7 +163,7 @@ const LibraryServices = () => {
   ];
 
   return (
-    <section className="container mx-auto py-8">
+    <section id='services' className="container mx-auto py-8">
       <h2 className="text-2xl font-bold mb-4">Library Services</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Map through the services array to display each service */}
@@ -176,8 +192,8 @@ const Reviews = () => {
   ];
 
   return (
-    <section className="container mx-auto py-8">
-      <h2 className="text-2xl font-bold mb-4">Testimonials</h2>
+    <section id='reviews' className="container mx-auto py-8">
+      <h2 className="text-2xl font-bold mb-4">Reviews</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Map through the reviews array to display each review */}
         {reviews.map(review => (
