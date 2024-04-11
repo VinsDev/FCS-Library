@@ -11,6 +11,7 @@ const LandingPage = () => {
       <Categories />
       <LibraryServices />
       <Reviews />
+      <AboutUs />
       <Footer />
     </div>
   );
@@ -53,7 +54,7 @@ const Header = () => {
           <span className={`text-gray-600 hover:text-gray-800 ${activeItem === '#reviews' ? 'text-blue-600' : ''} cursor-pointer`} onClick={() => handleItemClick('#reviews')}>
             Reviews
           </span>
-          <span className={`text-gray-600 hover:text-gray-800 ${activeItem === '#about' ? 'text-blue-600' : ''} cursor-pointer`} onClick={() => handleItemClick('#about')}>
+          <span className={`text-gray-600 hover:text-gray-800 ${activeItem === '#about-us' ? 'text-blue-600' : ''} cursor-pointer`} onClick={() => handleItemClick('#about-us')}>
             About Us
           </span>
         </nav>
@@ -127,12 +128,15 @@ const FeaturedContent = () => {
 const Categories = () => {
   // Sample array of categories (replace with actual data)
   const categories = [
-    { id: 1, title: 'Fiction', icon: '📚' },
-    { id: 2, title: 'Science Fiction', icon: '🚀' },
-    { id: 3, title: 'Fantasy', icon: '🧙‍♂️' },
-    { id: 4, title: 'Mystery', icon: '🔍' },
-    { id: 5, title: 'Romance', icon: '💖' },
-    { id: 6, title: 'Thriller', icon: '🔫' },
+    { id: 1, title: 'Religion', icon: '⛪️' },
+    { id: 2, title: 'Lifestyle', icon: '🌿' },
+    { id: 3, title: 'Motivation', icon: '💪' },
+    { id: 4, title: 'Education', icon: '📚' },
+    { id: 5, title: 'Inspirational', icon: '✨' },
+    { id: 6, title: 'Audiobooks', icon: '🎧' },
+    { id: 7, title: 'Documentaries', icon: '🎥' },
+    { id: 8, title: 'Relationships', icon: '💑' },
+    { id: 9, title: 'Fiction', icon: '📖' },
   ];
 
   return (
@@ -156,7 +160,6 @@ const Categories = () => {
 const LibraryServices = () => {
   // Sample array of library services (replace with actual data)
   const services = [
-    { id: 1, title: 'Book Borrowing', icon: '📚', description: 'Borrow books from our extensive collection for free.' },
     { id: 2, title: 'Digital Resources', icon: '💻', description: 'Access e-books, audiobooks, and online databases from anywhere.' },
     { id: 3, title: 'Events & Workshops', icon: '🎉', description: 'Participate in book clubs, author talks, and educational workshops.' },
     { id: 4, title: 'Research Assistance', icon: '🔍', description: 'Get help with research projects and finding resources.' },
@@ -206,6 +209,26 @@ const Reviews = () => {
           </div>
         ))}
       </div>
+    </section>
+  );
+};
+
+const AboutUs = () => {
+  return (
+    <section id='about-us' className="container mx-auto py-8">
+      <h2 className="text-2xl font-bold mb-4">About FCS eLibrary</h2>
+      <p className="text-lg text-gray-700 mb-4">
+        FCS eLibrary is an online platform dedicated to providing access to a wide range of digital books, audiobooks, and educational resources. Our mission is to promote literacy, learning, and personal development by making high-quality reading materials accessible to everyone, anytime, and anywhere.
+      </p>
+      <p className="text-lg text-gray-700 mb-4">
+        At FCS eLibrary, we believe in the power of knowledge and the transformative impact it can have on individuals and communities. Whether you're a student, a professional, or simply an avid reader, our vast collection of materials caters to diverse interests and preferences.
+      </p>
+      <p className="text-lg text-gray-700 mb-4">
+        Our team is committed to continuously expanding our library, enhancing user experience, and fostering a supportive online community of learners and enthusiasts. We strive to innovate, collaborate, and inspire lifelong learning journeys for all our users.
+      </p>
+      <p className="text-lg text-gray-700 mb-4">
+        Thank you for choosing FCS eLibrary as your digital reading destination. Join us in the pursuit of knowledge, exploration, and enrichment!
+      </p>
     </section>
   );
 };
