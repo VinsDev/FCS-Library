@@ -46,16 +46,21 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search..."
-            className="border border-gray-300 rounded-l py-2 px-4 focus:outline-none focus:border-blue-500"
+            className="border border-gray-300 rounded-l-full py-2 px-4 focus:outline-none focus:border-blue-500"
           />
-          <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-r py-2 px-4">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-r-full py-2 px-4">
             Search
           </button>
         </div>
-        {/* Login Button */}
-        <Link to="/login" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md">
-          Login
-        </Link>
+        {/* Sign-up and Login Buttons */}
+        <div className="space-x-4">
+          <Link to="/signup" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full">
+            Sign Up
+          </Link>
+          <Link to="/login" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full">
+            Login
+          </Link>
+        </div>
       </div>
     </header>
   );
