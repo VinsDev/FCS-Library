@@ -4,7 +4,7 @@ import DashboardContent from '../components/dashboard/DashboardContent';
 import { useSelector } from 'react-redux';
 
 const Dashboard = () => {
-  const selectedItem = useSelector((state) => state.selectedItem) || 'Home'; // Set default value to 'Home' if selectedItem is falsy
+  const selectedItem = useSelector((state) => state.selectedItem) || 'Home'; 
 
   return (
     <div className="flex h-screen">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -81,18 +82,7 @@ const Home = () => {
       </div>
      
     
-          {/* Categories */}
-          <div className="bg-white rounded-lg p-6">
-            <h2 className="text-lg font-semibold mb-4">Categories</h2>
-            {/* Add categories content */}
-            <div>
-              {/* Content item 1 */}
-            </div>
-            <div>
-              {/* Content item 2 */}
-            </div>
-            {/* Add more content items as needed */}
-          </div>
+          <Categories/>
           {/* Trending */}
           <div className="bg-white rounded-lg p-6">
             <h2 className="text-lg font-semibold mb-4">Trending</h2>
@@ -113,3 +103,35 @@ const Home = () => {
 };
 
 export default Home;
+
+const Categories = () => {
+  // Sample array of categories (replace with actual data)
+  const categories = [
+    { id: 1, title: 'Religion', icon: '⛪️' },
+    { id: 2, title: 'Lifestyle', icon: '🌿' },
+    { id: 3, title: 'Motivation', icon: '💪' },
+    { id: 4, title: 'Education', icon: '📚' },
+    { id: 5, title: 'Inspirational', icon: '✨' },
+    { id: 6, title: 'Audiobooks', icon: '🎧' },
+    { id: 7, title: 'Documentaries', icon: '🎥' },
+    { id: 8, title: 'Relationships', icon: '💑' },
+    { id: 9, title: 'Fiction', icon: '📖' },
+  ];
+
+  return (
+    <div className="bg-white rounded-lg p-6">
+            <h2 className="text-lg font-semibold mb-4">Categories</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {/* Map through the categories array to display each category */}
+        {categories.map(category => (
+          <Link key={category.id} to={`/category/${category.id}`} className="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+            <div className="p-4 flex items-center justify-center">
+              <span className="text-4xl">{category.icon}</span>
+              <h3 className="text-lg font-semibold ml-2">{category.title}</h3>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+};
