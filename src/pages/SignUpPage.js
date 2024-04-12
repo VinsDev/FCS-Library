@@ -31,7 +31,7 @@ const SignUpPage = () => {
 
     // Your sign-up logic goes here...
     // For demonstration purposes, let's assume the sign-up is successful
-    setSignupStatus('Sign-up successful. Please login.');
+    // setSignupStatus('Sign-up successful. Please login.');
     // Clear form fields
     setUsername('');
     setEmail('');
@@ -39,12 +39,14 @@ const SignUpPage = () => {
     setConfirmPassword('');
     setPhoneNumber('');
     setAddress('');
+
+    navigate('/login');
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white shadow-lg rounded-lg w-96 p-8">
-        <h2 className="text-3xl font-bold mb-8 text-center">Sign Up</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">FCS Library SignUp</h2>
         <form onSubmit={handleSignUp}>
           <div className="mb-4">
             <TextField
