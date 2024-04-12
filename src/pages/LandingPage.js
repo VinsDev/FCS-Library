@@ -6,7 +6,6 @@ import Footer from '../components/landing/Footer';
 import Content from '../components/landing/Content';
 
 const LandingPage = () => {
-  // Define selectedItem state using useState
   const [selectedItem, setSelectedItem] = useState('home');
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedBook, setSelectedBook] = useState(null);

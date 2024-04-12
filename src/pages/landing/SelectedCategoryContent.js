@@ -76,8 +76,6 @@ const SelectedCategoryContent = ({ category, setSelectedCategory, setSelectedBoo
         setSelectedCategory(null); // Clear the selected category
     };
 
-
-
     return (
         <div className="selected-category-content">
             <div className="flex items-center justify-start mb-4 gap-10 px-10">

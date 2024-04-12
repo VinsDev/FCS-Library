@@ -1,14 +1,14 @@
 import React from 'react';
 import Home from '../../pages/dashboard/Home';
-import Books from '../../pages/dashboard/Books';
-import Authors from '../../pages/dashboard/Authors';
+import Bookmarks from '../../pages/dashboard/Bookmarks';
+import History from '../../pages/dashboard/History';
 
 const DashboardContent = ({ selectedItem }) => {
   return (
     <> 
-    {selectedItem === 'Home' && <Home />}
-    {selectedItem === 'Books' && <Books />}
-    {selectedItem === 'Authors' && <Authors />}
+    {selectedItem === 'home' && <Home />}
+    {selectedItem === 'bookmarks' && <Bookmarks />}
+    {selectedItem === 'History' && <History />}
     </>
   );
 };

@@ -4,8 +4,8 @@ import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/dashboard/Home';
-import Books from './pages/dashboard/Books';
-import Authors from './pages/dashboard/Authors';
+import Books from './pages/dashboard/Bookmarks';
+import Authors from './pages/dashboard/History';
 import SignUpPage from './pages/SignUpPage';
 
 
@@ -20,9 +20,8 @@ const App = () => {
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/dashboard" element={<Dashboard />}>
               <Route path="/dashboard/home" element={<Home />} />
-              <Route path="/dashboard/books" element={<Books />} />
-              <Route path="/dashboard/authors" element={<Authors />} />
-              {/* Add more sub-routes for additional sections/pages */}
+              <Route path="/dashboard/bookmarks" element={<Books />} />
+              <Route path="/dashboard/history" element={<Authors />} />
             </Route>
           </Routes>
     </Router>

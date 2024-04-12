@@ -5,8 +5,8 @@ import { setSelectedItem } from '../../state/actions';
 
 const sidebarItems = [
   { label: 'Home', path: '/dashboard/home' },
-  { label: 'Books', path: '/dashboard/books' },
-  { label: 'Authors', path: '/dashboard/authors' }
+  { label: 'Bookmarks', path: '/dashboard/bookmarks' },
+  { label: 'History', path: '/dashboard/history' }
   // Add more sidebar items as needed
 ];
 
@@ -28,7 +28,7 @@ const Sidebar = () => {
               <Link
                 to={item.path}
                 className="block p-2 hover:bg-gray-100 rounded-lg"
-                onClick={() => handleItemClick(item.label)}
+                onClick={() => handleItemClick(item.label.toLocaleLowerCase())}
               >
                 {item.label} {/* Render the label */}
               </Link>

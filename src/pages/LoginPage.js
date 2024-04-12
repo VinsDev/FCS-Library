@@ -13,9 +13,6 @@ const LoginPage = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
-    // Your login logic goes here...
-    // For demonstration purposes, let's assume the login is successful
     navigate('/dashboard/home');
   };
 

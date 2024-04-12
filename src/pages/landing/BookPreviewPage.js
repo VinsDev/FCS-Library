@@ -10,7 +10,7 @@ const BookPreviewPage = ({ book, setSelectedBook }) => {
     isbnNumber,
     size,
     bookFormat,
-    image,
+    imageUrl,
   } = book;
 
   const handleDownload = () => {
@@ -27,7 +27,7 @@ const BookPreviewPage = ({ book, setSelectedBook }) => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 12h16" />
           </svg>
         </div>
-        <img src={image} alt={name} className="w-64 h-64 object-cover" />
+        <img src={imageUrl} alt={name} className="w-64 h-64 object-cover" />
       </div>
       <div className="mt-8">
         <div className="flex items-center">
