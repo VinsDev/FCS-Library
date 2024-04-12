@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Header = ({ selectedItem, setSelectedItem }) => {
+const Header = ({ selectedItem, setSelectedItem, setSelectedCategory, setSelectedBook }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const handleItemClick = (item) => {
     setSelectedItem(item);
+    setSelectedCategory(null);
+    setSelectedBook(null);
+    setIsMenuOpen(false); // Close the menu after selecting an item
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -12,8 +21,16 @@ const Header = ({ selectedItem, setSelectedItem }) => {
         <a href="/" className="text-xl font-bold text-blue-600">
           FCS Library
         </a>
+        {/* Mobile Menu Toggle */}
+        <div className="md:hidden flex items-center">
+          <button className="text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800" onClick={toggleMenu}>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+            </svg>
+          </button>
+        </div>
         {/* Navigation Menu */}
-        <nav className="hidden md:flex space-x-4">
+        <nav className={`md:flex md:flex-row md:space-x-4 ${isMenuOpen ? "block" : "hidden"} ${isMenuOpen ? "flex-col" : ""} md:items-center md:justify-center`}>
           <NavItem selectedItem={selectedItem} handleItemClick={handleItemClick} item="home">Home</NavItem>
           <NavItem selectedItem={selectedItem} handleItemClick={handleItemClick} item="categories">Categories</NavItem>
           <NavItem selectedItem={selectedItem} handleItemClick={handleItemClick} item="services">Services</NavItem>
@@ -38,14 +55,6 @@ const Header = ({ selectedItem, setSelectedItem }) => {
           <a href="login" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full">
             Login
           </a>
-        </div>
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex items-center">
-          <button className="text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
         </div>
       </div>
     </header>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SelectedCategoryContent = ({ category, setSelectedCategory }) => {
+const SelectedCategoryContent = ({ category, setSelectedCategory, setSelectedBook }) => {
     // Mock data for books
     const books = [
         {
@@ -8,53 +8,52 @@ const SelectedCategoryContent = ({ category, setSelectedCategory }) => {
             name: 'Book 1',
             author: 'Author 1',
             description: 'Description of Book 1',
+            genre: 'Genre 1',
+            publicationDate: 'January 1, 2022',
+            isbnNumber: '123456789',
+            size: '6 x 9 inches',
+            bookFormat: 'Hardcover',
             image: 'book1.jpg', // Replace with actual image URL
         },
         {
-            id: 1,
-            name: 'Book 1',
-            author: 'Author 1',
-            description: 'Description of Book 1',
-            image: 'book1.jpg', // Replace with actual image URL
-        },{
-            id: 1,
-            name: 'Book 1',
-            author: 'Author 1',
-            description: 'Description of Book 1',
-            image: 'book1.jpg', // Replace with actual image URL
-        },{
-            id: 1,
-            name: 'Book 1',
-            author: 'Author 1',
-            description: 'Description of Book 1',
-            image: 'book1.jpg', // Replace with actual image URL
-        },{
-            id: 1,
-            name: 'Book 1',
-            author: 'Author 1',
-            description: 'Description of Book 1',
-            image: 'book1.jpg', // Replace with actual image URL
-        },{
-            id: 1,
-            name: 'Book 1',
-            author: 'Author 1',
-            description: 'Description of Book 1',
-            image: 'book1.jpg', // Replace with actual image URL
-        },{
-            id: 1,
-            name: 'Book 1',
-            author: 'Author 1',
-            description: 'Description of Book 1',
-            image: 'book1.jpg', // Replace with actual image URL
-        },{
-            id: 1,
-            name: 'Book 1',
-            author: 'Author 1',
-            description: 'Description of Book 1',
-            image: 'book1.jpg', // Replace with actual image URL
+            id: 2,
+            name: 'Book 2',
+            author: 'Author 2',
+            description: 'Description of Book 2',
+            genre: 'Genre 2',
+            publicationDate: 'February 1, 2022',
+            isbnNumber: '987654321',
+            size: '5 x 8 inches',
+            bookFormat: 'Paperback',
+            image: 'book2.jpg', // Replace with actual image URL
+        },
+        {
+            id: 3,
+            name: 'Book 3',
+            author: 'Author 3',
+            description: 'Description of Book 3',
+            genre: 'Genre 3',
+            publicationDate: 'March 1, 2022',
+            isbnNumber: '135792468',
+            size: '7 x 10 inches',
+            bookFormat: 'E-book',
+            image: 'book3.jpg', // Replace with actual image URL
+        },
+        {
+            id: 4,
+            name: 'Book 4',
+            author: 'Author 4',
+            description: 'Description of Book 4',
+            genre: 'Genre 4',
+            publicationDate: 'March 1, 2022',
+            isbnNumber: '135792468',
+            size: '7 x 10 inches',
+            bookFormat: 'E-book',
+            image: 'book3.jpg', // Replace with actual image URL
         },
         // Add more books as needed
     ];
+
 
     // Render a single book card
     const renderBookCard = (book) => (
@@ -65,16 +64,19 @@ const SelectedCategoryContent = ({ category, setSelectedCategory }) => {
                 <p className="text-gray-700 text-base">{book.description}</p>
             </div>
             <div className="px-6 py-4">
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-                    Author: {book.author}
+                <span onClick={() => setSelectedBook(book)} className="t-2 inline-block text-blue-500 hover:text-blue-700 cursor-pointer">
+                    View
                 </span>
             </div>
         </div>
     );
 
+
     const handleBackClick = () => {
         setSelectedCategory(null); // Clear the selected category
     };
+
+
 
     return (
         <div className="selected-category-content">

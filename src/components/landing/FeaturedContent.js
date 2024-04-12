@@ -33,7 +33,7 @@ const FeaturedContent = () => {
               <div className="p-4">
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
-                <Link to={`/books/${item.id}`} className="mt-2 inline-block text-blue-500 hover:text-blue-700">Read more</Link>
+                <Link to={`/books/${item.id}`} className="mt-2 inline-block text-blue-500 hover:text-blue-700">Read</Link>
               </div>
             </div>
           ))}

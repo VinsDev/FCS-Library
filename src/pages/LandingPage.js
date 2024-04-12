@@ -8,11 +8,13 @@ import Content from '../components/landing/Content';
 const LandingPage = () => {
   // Define selectedItem state using useState
   const [selectedItem, setSelectedItem] = useState('home');
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedBook, setSelectedBook] = useState(null);
 
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
-      <Header selectedItem={selectedItem} setSelectedItem={setSelectedItem} />
-      <Content selectedItem={selectedItem} />
+      <Header selectedItem={selectedItem} setSelectedItem={setSelectedItem} setSelectedCategory={setSelectedCategory} setSelectedBook={setSelectedBook} />
+      <Content selectedItem={selectedItem} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} selectedBook={selectedBook} setSelectedBook={setSelectedBook} />
       <Footer />
     </div>
   );
