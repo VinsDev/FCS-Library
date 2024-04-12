@@ -5,7 +5,7 @@ import LibraryServices from "./Services";
 const Home = ({setSelectedBook}) => {
     return (
         <div>
-            <FeaturedContent />
+            <FeaturedContent setSelectedBook={setSelectedBook}/>
             <LibraryServices />
             <Reviews />
             <AboutUs />

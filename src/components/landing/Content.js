@@ -10,7 +10,7 @@ const Content = ({ selectedItem, selectedCategory, setSelectedCategory, selected
 
   return (
     <div className='mt-20 py-6'>
-      {selectedItem === 'home' && !selectedBook && <Home />}
+      {selectedItem === 'home' && !selectedBook && <Home setSelectedBook={setSelectedBook} />}
       {selectedItem === 'categories' && !selectedCategory && !selectedBook && <Categories setSelectedCategory={setSelectedCategory} />}
 
       {selectedCategory && selectedItem === 'categories' && !selectedBook && <SelectedCategoryContent category={selectedCategory} setSelectedCategory={setSelectedCategory} setSelectedBook={setSelectedBook} />}

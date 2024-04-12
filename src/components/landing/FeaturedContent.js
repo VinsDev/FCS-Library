@@ -51,7 +51,7 @@ const FeaturedContent = ({setSelectedBook}) => {
               <div className="p-4">
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
-                <div onClick={() => setSelectedBook(item)} className="mt-2 inline-block text-blue-500 hover:text-blue-700">Read</div>
+                <div onClick={() => setSelectedBook(item)} className="mt-2 inline-block text-blue-500 hover:text-blue-700 cursor-pointer">Read</div>
               </div>
             </div>
           ))}

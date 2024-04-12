@@ -80,7 +80,7 @@ const SelectedCategoryContent = ({ category, setSelectedCategory, setSelectedBoo
 
     return (
         <div className="selected-category-content">
-            <div className="flex items-center justify-start mb-4 gap-10">
+            <div className="flex items-center justify-start mb-4 gap-10 px-10">
                 <button onClick={handleBackClick} className="text-gray-700 hover:text-gray-900">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-blue-500">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 19l-7-7 7-7" />
