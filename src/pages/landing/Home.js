@@ -2,7 +2,7 @@ import FeaturedContent from "../../components/landing/FeaturedContent";
 import AboutUs from "./About";
 import LibraryServices from "./Services";
 
-const Home = () => {
+const Home = ({setSelectedBook}) => {
     return (
         <div>
             <FeaturedContent />

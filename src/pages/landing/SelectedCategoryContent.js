@@ -13,7 +13,7 @@ const SelectedCategoryContent = ({ category, setSelectedCategory, setSelectedBoo
             isbnNumber: '123456789',
             size: '6 x 9 inches',
             bookFormat: 'Hardcover',
-            image: 'book1.jpg', // Replace with actual image URL
+            imageUrl: 'https://cdn.pixabay.com/photo/2018/03/19/18/20/tea-time-3240766_1280.jpg', // Replace with actual imageUrl URL
         },
         {
             id: 2,
@@ -25,7 +25,7 @@ const SelectedCategoryContent = ({ category, setSelectedCategory, setSelectedBoo
             isbnNumber: '987654321',
             size: '5 x 8 inches',
             bookFormat: 'Paperback',
-            image: 'book2.jpg', // Replace with actual image URL
+            imageUrl: 'https://template-frame.canva.com/EADi-8Vl31I/1/2/400x400.png', // Replace with actual imageUrl URL
         },
         {
             id: 3,
@@ -37,7 +37,7 @@ const SelectedCategoryContent = ({ category, setSelectedCategory, setSelectedBoo
             isbnNumber: '135792468',
             size: '7 x 10 inches',
             bookFormat: 'E-book',
-            image: 'book3.jpg', // Replace with actual image URL
+            imageUrl: 'https://template-frame.canva.com/EAFSulsfnzQ/1/2/400x335.png', // Replace with actual imageUrl URL
         },
         {
             id: 4,
@@ -49,7 +49,7 @@ const SelectedCategoryContent = ({ category, setSelectedCategory, setSelectedBoo
             isbnNumber: '135792468',
             size: '7 x 10 inches',
             bookFormat: 'E-book',
-            image: 'book3.jpg', // Replace with actual image URL
+            imageUrl: 'https://template-frame.canva.com/EADcaaSuGCA/1/2/282x400.png', // Replace with actual imageUrl URL
         },
         // Add more books as needed
     ];
@@ -58,7 +58,7 @@ const SelectedCategoryContent = ({ category, setSelectedCategory, setSelectedBoo
     // Render a single book card
     const renderBookCard = (book) => (
         <div key={book.id} className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-4">
-            <img src={book.image} alt={book.name} className="w-full h-64 object-cover" />
+            <img src={book.imageUrl} alt={book.name} className="w-full h-64 object-cover" />
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{book.name}</div>
                 <p className="text-gray-700 text-base">{book.description}</p>
