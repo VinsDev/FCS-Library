@@ -1,14 +1,14 @@
 import React from 'react';
-import Home from '../../pages/admin/Home';
-import Bookmarks from '../../pages/admin/Bookmarks';
-import History from '../../pages/admin/History';
+import Home from '../../pages/admin/Overview';
+import Users from '../../pages/admin/Users';
+import Books from '../../pages/admin/Books';
 
 const AdminDashboardContent = ({ selectedItem }) => {
   return (
     <> 
-    {selectedItem === 'home' && <Home />}
-    {selectedItem === 'bookmarks' && <Bookmarks />}
-    {selectedItem === 'History' && <History />}
+    {selectedItem === 'overview' && <Home />}
+    {selectedItem === 'users' && <Users />}
+    {selectedItem === 'books' && <Books />}
     </>
   );
 };

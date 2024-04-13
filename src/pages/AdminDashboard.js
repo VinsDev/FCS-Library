@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import AdminSidebar from '../components/admin/AdminSidebar';
 
 const AdminDashboard = () => {
-  const selectedItem = useSelector((state) => state.selectedItem) || 'home'; 
+  const selectedItem = useSelector((state) => state.selectedItem) || 'overview'; 
 
   return (
     <div className="flex h-screen">

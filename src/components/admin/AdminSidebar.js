@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux';
 import { setSelectedItem } from '../../state/actions';
 
 const AdminSidebarItems = [
-  { label: 'Home', path: '/admin/home' },
-  { label: 'Bookmarks', path: '/admin/bookmarks' },
-  { label: 'History', path: '/admin/history' }
+  { label: 'Overview', path: '/admin/overview' },
+  { label: 'Users', path: '/admin/users' },
+  { label: 'Books', path: '/admin/books' }
 ];
 
 const AdminSidebar = () => {
@@ -20,7 +20,7 @@ const AdminSidebar = () => {
   return (
     <div className="bg-white text-gray-800 w-64 flex-shrink-0 h-screen overflow-y-auto">
       <div className="p-4">
-        <h2 className="text-2xl font-bold mb-4 text-blue-700">FCS Library</h2>
+        <h2 className="text-2xl font-bold mb-4 text-blue-700">FCS Library Admin</h2>
         <ul>
           {AdminSidebarItems.map((item, index) => (
             <li key={index} className={`mb-2 ${location.pathname === item.path ? 'bg-blue-100' : ''} rounded-lg`}>
