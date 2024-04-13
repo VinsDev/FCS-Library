@@ -13,7 +13,7 @@ const AdminLogin = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    navigate('/admin/home');
+    navigate('/admin/overview');
   };
 
   return (
