@@ -7,6 +7,8 @@ import Home from './pages/dashboard/Home';
 import Books from './pages/dashboard/Bookmarks';
 import Authors from './pages/dashboard/History';
 import SignUpPage from './pages/SignUpPage';
+import AdminLogin from './pages/AdminLogin';
+import AdminDashboard from './pages/AdminDashboard';
 
 
 
@@ -15,15 +17,23 @@ const App = () => {
   return (
     <Router>
       <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/signup" element={<SignUpPage />} />
-            <Route path="/dashboard" element={<Dashboard />}>
-              <Route path="/dashboard/home" element={<Home />} />
-              <Route path="/dashboard/bookmarks" element={<Books />} />
-              <Route path="/dashboard/history" element={<Authors />} />
-            </Route>
-          </Routes>
+        <Route path="/" element={<LandingPage />} />
+
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="/dashboard/home" element={<Home />} />
+          <Route path="/dashboard/bookmarks" element={<Books />} />
+          <Route path="/dashboard/history" element={<Authors />} />
+        </Route>
+
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin" element={<AdminDashboard />}>
+          <Route path="/admin/home" element={<Home />} />
+          <Route path="/admin/bookmarks" element={<Books />} />
+          <Route path="/admin/history" element={<Authors />} />
+        </Route>
+      </Routes>
     </Router>
   );
 };
