@@ -1,10 +1,12 @@
 import FeaturedContent from "../../components/landing/FeaturedContent";
+import MemoryComponent from "../../components/landing/Memorial";
 import AboutUs from "./About";
 import LibraryServices from "./Services";
 
 const Home = ({setSelectedBook}) => {
     return (
         <div>
+            <MemoryComponent />
             <FeaturedContent setSelectedBook={setSelectedBook}/>
             <LibraryServices />
             <Reviews />

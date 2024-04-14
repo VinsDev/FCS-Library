@@ -16,10 +16,10 @@ const Header = ({ selectedItem, setSelectedItem, setSelectedCategory, setSelecte
 
   return (
     <header className="bg-white shadow-md fixed top-0 z-10 w-full">
-      <div className="container mx-auto flex justify-between items-center py-4">
+      <div className="container mx-auto flex justify-between items-center py-4 pl-4">
         {/* Logo */}
-        <a href="/" className="text-xl font-bold text-blue-600">
-          FCS Library
+        <a href="/" className="text-xl font-bold text-blue-600 logo block overflow-hidden leading-5">
+          Prof. T.A Gbodi <br /> <div className="mt-2"></div>Memorial FCSelibrary
         </a>
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center">

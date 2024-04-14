@@ -9,7 +9,7 @@ import BookPreviewPage from '../../pages/landing/BookPreviewPage';
 const Content = ({ selectedItem, selectedCategory, setSelectedCategory, selectedBook, setSelectedBook }) => {
 
   return (
-    <div className='mt-20 py-6'>
+    <div className='mt-20 py-6 px-6'>
       {selectedItem === 'home' && !selectedBook && <Home setSelectedBook={setSelectedBook} />}
       {selectedItem === 'categories' && !selectedCategory && !selectedBook && <Categories setSelectedCategory={setSelectedCategory} />}
 
